@@ -19,7 +19,7 @@ const Resturant = () => {
           <div className='btn-item' onClick={() => filterItem("breakfast")}>Breakfast</div>
           <div className='btn-item' onClick={() => filterItem("lunch")}>Lunch</div>
           <div className='btn-item' onClick={() => filterItem("evening")}>Evening</div>
-          <div className='btn-item' onClick={() => filterItem("dinner")}>Dinner</div>
+          
           <div className='btn-item' onClick={() => setmenudata(Menu)}>All</div>
         </div>
       </nav>

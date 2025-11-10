@@ -1,0 +1,209 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5feffda;
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+  min-height: 100vh;
+  padding: 90px 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Add this: Wrapper to arrange cards horizontally */
+/* This targets a potential container or uses body's direct child behavior */
+body > .Card-container,
+.Card-container {
+  display: inline-block;
+  margin-right: 30px; /* Space between cards */
+  vertical-align: top;
+  width: 300px;
+  max-width: 100%;
+}
+
+
+
+/* NEW: Force cards to go horizontal using flex on a container */
+body,
+body > div { /* Fallback: if direct div contains cards */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 20px;
+  padding: 90px 50px;
+}
+
+/* If you have only .Card-container as direct children of body, target them */
+.Card-container {
+  width: 300px;
+  flex: 1 1 300px; /* Allow flexibility */
+  max-width: 400px;
+}
+
+/* Keep the rest of your styles as they are below */
+.card {
+  background:#cbd1d2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 38px;
+  height: 100%; /* Make height consistent */
+  width: 400px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Number (Top Left Corner) */
+.card-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fdfcfc;
+  color: #333;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+/* Author */
+.author {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: block;
+  color: #0c0a0a;
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+/* Title */
+.Card-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+/* Description */
+.card-Description {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Read Button */
+.card-read {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #dd6b2a;
+  color: rgb(252, 250, 250);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.card-read:hover {
+  background: #c64708;
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0;
+  background-color: #ddd;
+  border: 1px dashed #ccc;
+}
+
+/* Tag (Order Now) */
+.card-tag {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  background: rgb(230, 69, 69);
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #d3d0d0;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* BUTTON ITEM */
+.btn-item {
+  padding: 10px 20px;
+  background: #838080cb;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-item:hover {
+  background: #4c9b7a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ACTIVE ITEM (optional, for selected category) */
+.btn-item.active {
+  background: #ff3b3b;
+}
+
+/* RESPONSIVE (Mobile friendly) */
+@media (max-width: 600px) {
+  .btn-group {
+    gap: 10px;
+  }
+  .btn-item {
+    flex: 1 1 100px;
+    text-align: center;
+  }
+}
